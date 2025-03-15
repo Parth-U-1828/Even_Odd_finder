@@ -1,0 +1,48 @@
+{% load static %}
+<html>
+<head>
+<title>
+Even Odd App by Parth
+</title>
+<style>
+	* {font-size:3vw;font-family:Times New Roman;}
+	body {background-color:orange;}
+	h1 {background-color:black;color:orange;width:50%;border-radius:3vw;}
+</style>
+<link rel="icon" href="{% static '/images/calci.ico' %}">
+
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<script>
+function check()
+{
+let num=document.getElementById("id_num");
+let msg=document.getElementById("id_msg");
+
+if(num.value == "")
+{
+	alert("U did not enter integer");
+	msg.innerHTML = "";
+	num.focus();
+	return false;
+}
+else
+{
+	return true;
+}
+
+</script>
+</head>
+
+<body>
+<center>
+<h1>Even Odd App</h1>
+<form onsubmit="return check()">
+<input type="number" name="num" placeholder="Enter an Integer" id="id_num" />
+<br/><br/>
+<input type="submit" value="Check" />
+</form>
+<h2 id="id_msg">{{ msg }}</h2>
+</center>
+</body>
+
+</html>
